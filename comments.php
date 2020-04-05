@@ -43,6 +43,7 @@ echo $commentClass;
 
 <?php if ($comments->children) { ?>
     <div class="comment-children">
+	<hr>
         <?php $comments->threadedComments($options); ?>
     </div>
 <?php } ?>
