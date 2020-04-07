@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="guankan" unicode="&#58942;" d="M512.3 619.1c-228.4 0-374-178.5-393.8-255.9 19.3-78.2 165.5-256 393.8-256s373.8 176.5 393.9 256c-19.7 78.2-165.6 255.9-393.9 255.9z m0-452.9c-182.3 0-303.2 131.1-331.5 196.7C209.6 428.6 331.2 560 512.3 560c181.9 0 303-131.2 331.5-196.9-28.6-65.6-149.8-196.9-331.5-196.9zM512.3 461.6c-54.4 0-98.4-44.1-98.4-98.5s44.1-98.4 98.4-98.4c54.4 0 98.5 44.1 98.5 98.4 0 54.4-44.1 98.5-98.5 98.5z m0-137.9c-21.7 0-39.4 17.7-39.4 39.4s17.6 39.4 39.4 39.4 39.4-17.7 39.4-39.4-17.7-39.4-39.4-39.4z"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>

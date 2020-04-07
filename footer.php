@@ -23,8 +23,10 @@
    </div>
 
 
-   <p class="uk-text-center">&copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.
-    <?php _e('Use <a href="http://www.typecho.org">Typecho</a> '); ?>.鲁ICP备19051997号-1</p> 
+   <p class="uk-text-center">
+   
+    <?php _e('Use <a href="http://www.typecho.org">Typecho</a> '); ?> Theme By <a href="https://liuxiaogang.cn">HHUI </a><br>
+   &copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>. <?php $this->options->beian() ?></p> 
 	
 	
 </div>
@@ -33,7 +35,7 @@
 
     <script src="<?php $this->options->themeUrl('js/uikit.min.js'); ?>"></script>
     <script src="<?php $this->options->themeUrl('js/uikit-icons.min.js'); ?>"></script>
-	
+
 <?php $this->footer(); ?>
 </body>
 </html>

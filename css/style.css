@@ -1,56 +1,44 @@
-/* header */
-
-.header {
-    background: black;
+/* 全局 */
+body{
+	overflow-y:scroll; /* 显示纵向滚动条 */
+	background-color: #f4f4f4;
+	font-size:14px;
 }
-a#logo {
-    color: #ffffff;
-    text-decoration: none;
+@media (min-width: 960px){
+	
 }
-a#logo:hover {
-    color: #ccc;
-}
-
-.uk-navbar-nav > li > a {
-    color: #ccc;
-}
-.uk-navbar-nav > li.uk-active > a {
-    color: #fff;
-}
-.uk-navbar-nav > li.uk-active > a:hover {
-    color: #ccc;
-}
-
-
-/* 评论 */
-ol.comment-list {
-    padding-left: 0px;
-	margin-block-start: 10px;
-    margin-block-end: 10px;
-}
-
-
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
-
-
-
-
-
-
 
 .container{
     max-width: 1000px;
 	margin: auto;
+	margin-top: 20px;
 }
+.main {
+    margin-right: 10px;
+    margin-left: 20px;
+}
+article {
+	margin-left: -10px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.01);
+}
+@media (max-width: 640px)  {
+	article{
+		padding: 10px;
+	}
+
+}
+
+@media (min-width: 640px)  and (max-width: 960px) {
+	article{
+		padding: 20px;
+	}
+
+}
+
+
 nav.uk-navbar-container.uk-navbar {
     max-width: 1000px;
 	margin: auto;
@@ -61,45 +49,182 @@ nav.uk-navbar-container.uk-navbar {
 .uk-navbar-item, .uk-navbar-nav>li>a, .uk-navbar-toggle {
     min-height: 50px;
 }
+::selection {
+    background: hsla(180, 20%, 17%, 0.89); /* 选中后的颜色 */
+    color: #fff;
+    text-shadow: none;
+} 
+
+
+/* index */
+
+.indexcategorylist a {
+    background: #fff;
+	font-size: 14px;
+    display: inline-block;
+    padding: 7px 22px;
+    border-radius: 20px;
+    color: #171717;
+    margin: 0 10px 10px 0;
+	text-decoration: none;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+	transition: all .3s cubic-bezier(.2, .5, .3, 1);
+}
+.indexcategorylist a:hover {
+    background: #111;
+    color: #fff;
+	transform: translateY(-1px);
+	font-weight: 900;
+}
+a.indexcategory{
+    display: inline-block;
+    padding: 7px 22px;
+    border-radius: 20px;
+    margin: 0 10px 10px 0;
+	text-decoration: none;
+    background: #111;
+    color: #fff;
+}
+.indexcategorylist {
+    text-align: center;
+    margin-bottom: 20px;
+}
 .tm-image-card {
 	transition: all .3s cubic-bezier(.2, .5, .3, 1);
-	
+	border-radius: 5px;
 }
 .tm-image-card:hover {
 	transform: translateY(-5px);
-	
+}
+.uk-card{
+
+}
+/* header */
+
+.header {
+	background: rgba(0,0,0,0.8);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+a#logo {
+    color: #ffffff;
+    text-decoration: none;
+	margin-left: 10px;
+	font-weight: 600;
+}
+a#logo:hover {
+    color: #ccc;
+}
+.uk-navbar-nav > li > a {
+    color: #ccc;
+}
+.uk-navbar-nav > li.uk-active > a {
+    color: #fff;
+	font-weight: 900;
+}
+.uk-navbar-nav > li.uk-active > a:hover {
+    color: #ccc;
 }
 
-.main {
-    margin-right: 10px;
-    margin-left: 20px;
+a.permalink {
+    text-decoration: none;
 }
-article {
-    margin: 10px;
+/* 评论 */
+ol.comment-list {
+    padding-left: 0px;
+	margin-block-start: 10px;
+    margin-block-end: 10px;
 }
-
 div#comments{
-    margin: 10px;
+	margin-top: 20px;
+    margin-left: -10px;
+    padding: 30px;
+    background-color: white;
+}
+@media (max-width: 640px)  {
+	div#comments{
+		margin-top: 10px;
+		padding: 10px;
+	}
+
+}
+
+@media (min-width: 640px)  and (max-width: 960px) {
+	div#comments{
+		margin-top: 15px;
+		padding: 15px;
+	}
 }
 
 
+/* body */
 
+.nobody{
+	padding-top: 26%;
+    padding-bottom: 30%;
+    text-align: center;
+    width: 100%;
+	font-weight: 900;
+}
+
+
+/* post */
+.tags{
+	text-align: center;
+}
+.tags a{
+    color: #fff;
+	text-decoration: none;
+    display: inline-block;
+    background-color: #1e87f0;
+    border-radius: 20px;
+    padding: 0px 10px;
+}
+.tags a:hover{
+	color: #fff;
+	background-color: #39f;
+}
+
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+/* */
+
+
+
+
+/* footer */
 div#footer {
     max-width: 1000px;
     margin: auto;
+    line-height: 1.7;
 }
 
 footer {
     margin-top: 20px;
 }
 
-img.logo{
-	max-height: 40px;
+
+
+
+
+
+h3.uk-card-title {
+    overflow: hidden;
+	text-overflow: ellipsis;
+    white-space: nowrap;
+	margin-block-end: 5px;
 }
 
-div#kongbox{
-	height: 20px;
+
+img.logo{
+	max-height: 40px;
+	padding: 7px;
 }
+
 .uk-card-title {
     font-size: 16px;
 	font-weight: 900;
@@ -144,7 +269,7 @@ h2.post-title::before {
     border-left: calc(5px + 0.1em) solid #e5e5e5;
 }
 .post-content {
-    font-size: initial;
+    font-size: 1rem;
 	line-height: 200%;
 	font-weight: 100;
 	padding-top: 10px;
@@ -165,11 +290,7 @@ h2.post-title::before {
     margin-top: 20px;
 }
 
-::selection {
-    background: hsla(180, 20%, 17%, 0.89);
-    color: #fff;
-    text-shadow: none;
-}
+
 
 
 .uk-text-meta a {
@@ -177,7 +298,8 @@ h2.post-title::before {
 }
 .uk-text-meta {
     color: #aaa;
-	font-size: 12px;
+	font-size: 0.8rem;
+    line-height: 1.7;
 }
 
 

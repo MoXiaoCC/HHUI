@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#313131" />
     <title><?php $this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
             'search'    =>  _t('包含关键字 %s 的文章'),
@@ -18,7 +19,7 @@
 
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/uikit.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
-
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('icon/iconfont.css"'); ?>">
     <!--[if lt IE 9]>
     <script src="//cdnjscn.b0.upaiyun.com/libs/html5shiv/r29/html5.min.js"></script>
     <script src="//cdnjscn.b0.upaiyun.com/libs/respond.js/1.3.0/respond.min.js"></script>
@@ -48,7 +49,11 @@
 				<?php endif; ?>
 				
 		</div>
+		
+		
 	   <div class="uk-navbar-right">
+
+	   
 			<ul class="uk-navbar-nav">
 				<li<?php if($this->is('index')): ?> class="uk-active"<?php endif; ?>><a href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a></li>
 				<?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
@@ -61,9 +66,6 @@
  </div>
 
 </header>
-
-<div id="kongbox">
-</div>
 
 
 <div class="container">

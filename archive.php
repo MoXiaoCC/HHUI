@@ -1,36 +1,67 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
 
-    <div class="col-mb-12 col-8" id="main" role="main">
-        <h3 class="archive-title"><?php $this->archiveTitle(array(
-            'category'  =>  _t('分类 %s 下的文章'),
-            'search'    =>  _t('包含关键字 %s 的文章'),
-            'tag'       =>  _t('标签 %s 下的文章'),
-            'author'    =>  _t('%s 发布的文章')
-        ), '', ''); ?></h3>
+    <div class="">
+
+<div class="indexcategorylist">
+	<a class="" href="<?php $this->options->siteUrl(); ?>"> 全部 </a>
+<?php $this->widget('Widget_Metas_Category_List')->to($category);?>
+<?php while ($category->next()):?>
+<a <?php if($this->is('post')):?>
+<?php if($this->category == $category->slug):?>class="indexcategory"<?php endif;?>
+<?php else:?>
+<?php if($this->is('category', $category->slug)):?>class="indexcategory"<?php endif;?>
+<?php endif;?> href="<?php $category->permalink();?>"><?php $category->name();?>
+</a>
+<?php endwhile; ?>
+
+
+</div>
+
+<div class="uk-child-width-1-3@m uk-child-width-1-2@s" uk-grid>
         <?php if ($this->have()): ?>
     	<?php while($this->next()): ?>
-            <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    			<h2 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
-    			<ul class="post-meta">
-    				<li itemprop="author" itemscope itemtype="http://schema.org/Person"><?php _e('作者: '); ?><a itemprop="name" href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a></li>
-    				<li><?php _e('时间: '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></li>
-    				<li><?php _e('分类: '); ?><?php $this->category(','); ?></li>
-                    <li itemprop="interactionCount"><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('评论', '1 条评论', '%d 条评论'); ?></a></li>
-    			</ul>
-                <div class="post-content" itemprop="articleBody">
-        			<?php $this->content('- 阅读剩余部分 -'); ?>
-                </div>
-    		</article>
+
+    <div>
+	<a itemprop="url" href="<?php $this->permalink() ?>" class="permalink">
+        <div class="uk-card uk-card-default tm-image-card">
+			<?php if($this->options->slimg && 'guanbi'==$this->options->slimg): ?>
+			<div class="uk-card-media-top"><!-- 关闭所有缩略图显示 -->
+			<?php else: ?>
+			<?php if($this->options->slimg && 'showoff'==$this->options->slimg): ?>
+			<?php showThumbnail($this); ?><!-- 有图文章显示缩略图，无图文章则不显示缩略图 -->
+			<?php else: ?>
+            <div class="uk-card-media-top" style="background-image: url('<?php showThumbnail($this); ?>');
+			background-size: cover;background-repeat: no-repeat;background-position:center center;width:100%;height:220px;border-radius: 5px 5px 0 0;">
+			<?php endif; ?>
+			<?php endif; ?>
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title"><?php $this->title() ?></h3>
+				 <p class="uk-text-meta uk-margin-remove-top">
+				 <?php _e('分类: '); ?><?php $this->category(','); ?>
+				 <?php _e('时间: '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
+				 <br>
+				 <?php _e('作者: '); ?><?php $this->author(); ?> | 浏览量：<?php get_post_view($this) ?> | <?php $this->commentsNum('暂无评论', '1 条评论', '%d 条评论'); ?>
+				<!--?php $this->content('- 阅读剩余部分 -'); ?-->
+				</p>
+            </div>
+        </div>
+	</a>
+    </div>
+
+			
     	<?php endwhile; ?>
         <?php else: ?>
-            <article class="post">
-                <h2 class="post-title"><?php _e('没有找到内容'); ?></h2>
-            </article>
+                <h2 class="nobody"><?php _e('没有找到内容'); ?></h2>
         <?php endif; ?>
+</div><!-- end #main-->
+		
+	<?php $this->pageNav('<<', '>>',10,'',array('wrapTag' => 'ul', 'wrapClass' => 'uk-pagination uk-flex-center','itemTag' => 'li','currentClass' => 'uk-active',)); ?>
 
-        <?php $this->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
+		
     </div><!-- end #main -->
 
-	<?php $this->need('sidebar.php'); ?>
+	<!--?php $this->need('sidebar.php'); ?-->
 	<?php $this->need('footer.php'); ?>
+	

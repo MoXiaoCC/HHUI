@@ -7,7 +7,7 @@
 		 <p class="uk-article-meta">
 			<?php _e('作者: '); ?><a itemprop="name" href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a>
 			| <?php _e('时间: '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time>
-			| <?php _e('分类: '); ?><?php $this->category(','); ?>
+			| <?php _e('分类: '); ?><?php $this->category(','); ?> | 浏览量：<?php get_post_view($this) ?>
 			<?php if($this->user->hasLogin()): ?>
 			| <a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php $this->cid(); ?>" target="_blank">编辑</a>
 			<?php else: ?>
@@ -20,7 +20,7 @@
         <div class="post-content" itemprop="articleBody">
             <?php $this->content(); ?>
         </div>
-        <p itemprop="keywords" class="tags"><?php _e('标签: '); ?><?php $this->tags(', ', true, 'none'); ?></p>
+        <p itemprop="keywords" class="tags"><?php _e('标签: '); ?><?php $this->tags('   ', true, 'none'); ?></p>
     </article>
 
     <?php $this->need('comments.php'); ?>
